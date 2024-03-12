@@ -9,7 +9,7 @@ const content = {
   aboutMe: {
     content: [
       "I love when I get to apply my educational background in Physics and Math. Occasionally I get lucky with a physics problem, but my greatest takeaway is a knack for creative problem solving and a passionate curiosity.",
-      "My side projects aren't always more software, I get myself into a lot of hobbies. Right now I'm really into making music, flying planes (I'm a licensed pilot too!), and weight lifting. I'm also currently restoring a 1979 Corvette.",
+      "My side projects aren't always software, I get myself into a lot of hobbies. Right now I'm really into making music, flying planes (I'm a licensed pilot too!), and offroading. I'm also currently restoring a 1979 Corvette.",
     ],
     images: [
       { src: "/plane.jpg", caption: "My first solo flight!" },

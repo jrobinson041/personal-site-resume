@@ -96,7 +96,7 @@ export default function Home() {
         />
       </PageContainer>
 
-      <VStack position="fixed" bottom={2} right={2}>
+      <VStack position="fixed" bottom={2} right={2} zIndex="overlay">
         <IconButton
           aria-label="Toggle color mode"
           icon={<MoonIcon />}
