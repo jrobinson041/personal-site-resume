@@ -9,6 +9,7 @@ import {
   Text,
   VStack,
   useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import content from "@/content";
 import PageContainer from "@/components/PageContainer";
@@ -20,10 +21,11 @@ import { MoonIcon } from "@chakra-ui/icons";
 import MoreAboutMe from "@/components/MoreAboutMe";
 import { Link } from "@chakra-ui/next-js";
 import QuoteText from "@/components/QuoteText";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLightbulb, FaLinkedin, FaMoon } from "react-icons/fa";
 
 export default function Home() {
   const { toggleColorMode } = useColorMode();
+  const ToggleThemeIcon = useColorModeValue(FaMoon, FaLightbulb);
 
   return (
     <>
@@ -63,15 +65,15 @@ export default function Home() {
               <Text as="span" fontWeight={700}>
                 John Robinson
               </Text>
-              , a software engineer with full stack web application experience,
-              especially on the front end. My specialty is{" "}
+              , a software engineer with full stack web app experience,
+              especially front end. My specialty is{" "}
               <Text as="span" fontWeight={700}>
                 React
               </Text>
               . I&apos;ve worked with complex data streams in connected apps and
               built full 3D experiences from the ground up using ThreeJS,
-              including a Virtual Reality experience I ran at a Google
-              conference.
+              including a Virtual Reality experience I&apos;ve demonstrated at a
+              Google conference.
             </QuoteText>
             <HStack>
               <Link href={`mailto:${content.email}`}>
@@ -85,11 +87,11 @@ export default function Home() {
           sections={[
             {
               title: "Experience",
-              content: <ExperienceSection experience={content.experience} />,
+              content: <ExperienceSection content={content.experience} />,
             },
             {
               title: "Education",
-              content: <EducationSection />,
+              content: <EducationSection content={content.education} />,
             },
             {
               title: "About Me",
@@ -102,11 +104,22 @@ export default function Home() {
       <VStack position="fixed" bottom={2} right={2} zIndex="overlay">
         <IconButton
           aria-label="Toggle color mode"
-          icon={<MoonIcon />}
+          icon={<Icon as={ToggleThemeIcon} />}
           onClick={toggleColorMode}
           size="lg"
           borderRadius="full"
         />
+        <Link
+          href="https://www.linkedin.com/in/john-robinson-9091b613a/"
+          isExternal
+        >
+          <IconButton
+            aria-label="LinkedIn"
+            icon={<Icon as={FaLinkedin} />}
+            size="lg"
+            borderRadius="full"
+          />
+        </Link>
         <Link
           href="https://github.com/jrobinson041/personal-site-resume"
           isExternal
@@ -114,7 +127,6 @@ export default function Home() {
           <IconButton
             aria-label="Github Repo"
             icon={<Icon as={FaGithub} />}
-            onClick={toggleColorMode}
             size="lg"
             borderRadius="full"
           />
