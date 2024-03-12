@@ -63,7 +63,7 @@ export default function ExperienceItem({
           {company} - {location}
         </Heading>
         <Show below="md">
-          <Heading size="md" opacity={0.5}>
+          <Heading size="sm" opacity={0.5}>
             {start} — {end}
           </Heading>
         </Show>
