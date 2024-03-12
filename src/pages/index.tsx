@@ -1,11 +1,32 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import {
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Button,
+  Divider,
+  HStack,
+  Heading,
+  IconButton,
+  SlideFade,
+  Text,
+  VStack,
+  useColorMode,
+} from "@chakra-ui/react";
+import content from "@/content";
+import PageContainer from "@/components/PageContainer";
+import Header from "@/components/Header";
+import ExperienceSection from "@/components/ExperienceSection";
+import Accordion from "@/components/Accordion";
+import EducationSection from "@/components/EducationSection";
+import { EmailIcon, MoonIcon } from "@chakra-ui/icons";
+import MoreAboutMe from "@/components/MoreAboutMe";
+import { Link } from "@chakra-ui/next-js";
+import QuoteText from "@/components/QuoteText";
 
 export default function Home() {
+  const { toggleColorMode } = useColorMode();
   return (
     <>
       <Head>
@@ -14,101 +35,84 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
+      <Header
+        name={content.name}
+        email={content.email}
+        imgSrc={content.avatarSrc}
+      />
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
+      <PageContainer>
+        <Divider />
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+        <SlideFade
+          in
+          offsetX="20px"
+          offsetY="0px"
+          transition={{ enter: { delay: 0.2, duration: 0.5 } }}
+        >
+          <VStack
+            textAlign="left"
+            spacing={12}
+            px={{ base: 4, md: 16 }}
+            py={16}
           >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+            <QuoteText fontWeight={100} opacity={0.8} fontSize="xl">
+              Hi, I&apos;m{" "}
+              <Text as="span" fontWeight={700}>
+                John Robinson
+              </Text>
+              , a software engineer with full stack web application experience,
+              especially on the front end. My specialty is{" "}
+              <Text as="span" fontWeight={700}>
+                React
+              </Text>
+              . I&apos;ve worked with complex data streams in connected apps and
+              built full 3D experiences from the ground up using ThreeJS,
+              including a Virtual Reality experience I ran at a Google
+              conference.
+            </QuoteText>
+            <HStack>
+              <Link href={`mailto:${content.email}`}>
+                <Button size="lg">Email Me</Button>
+              </Link>
+            </HStack>
+          </VStack>
+        </SlideFade>
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+        <Accordion
+          sections={[
+            {
+              title: "Experience",
+              content: <ExperienceSection experience={content.experience} />,
+            },
+            {
+              title: "Education",
+              content: <EducationSection />,
+            },
+            {
+              title: "About Me",
+              content: <MoreAboutMe {...content.aboutMe} />,
+            },
+          ]}
+        />
+      </PageContainer>
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      <VStack position="fixed" bottom={2} right={2}>
+        <IconButton
+          aria-label="Toggle color mode"
+          icon={<MoonIcon />}
+          onClick={toggleColorMode}
+          size="lg"
+          borderRadius="full"
+        />
+        <IconButton
+          aria-label="Toggle color mode"
+          icon={<MoonIcon />}
+          onClick={toggleColorMode}
+          size="lg"
+          borderRadius="full"
+        />
+      </VStack>
     </>
   );
 }
