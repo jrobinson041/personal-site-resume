@@ -12,8 +12,13 @@ export default function ExperienceSection({
 }: ExperienceSectionProps) {
   return (
     <VStack spacing={12}>
-      {experience.map((experience, idx) => (
-        <ExperienceItem key={idx} {...experience} />
+      {experience.map((item, idx) => (
+        <ExperienceItem
+          isFirst={idx === 0}
+          isLast={idx === experience.length - 1}
+          key={idx}
+          {...item}
+        />
       ))}
     </VStack>
   );

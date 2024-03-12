@@ -15,10 +15,6 @@ const content = {
       { src: "/plane.jpg", caption: "My first solo flight!" },
       { src: "/me_and_mario.jpeg", caption: "This is Mario, he's the best." },
       { src: "/home_studio.jpg", caption: "My little home recording studio." },
-      {
-        src: "/powerlifting.jpg",
-        caption: "Fun fact: I once won a powerlifting competition!",
-      },
     ],
   },
   experience,

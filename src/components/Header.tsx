@@ -7,7 +7,7 @@ import {
   VStack,
   chakra,
   shouldForwardProp,
-  useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   isValidMotionProp,
@@ -32,10 +32,8 @@ const bgGradient =
   "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9332983193277311) 54%, rgba(0,0,0,0.8940826330532213) 62%, rgba(0,0,0,0.7792366946778712) 74%, rgba(0,0,0,0.5663515406162465) 86%, rgba(0,0,0,0) 100%)";
 
 export default function Header({ name, email, imgSrc }: HeaderProps) {
-  const { colorMode } = useColorMode();
   const { scrollY } = useScroll();
-
-  const bgColor = colorMode === "light" ? "gray.200" : "gray.600";
+  const bgColor = useColorModeValue("gray.50", "gray.700");
 
   const appearOpacity = useTransform(scrollY, [0, 200], [0, 1]);
   const appearOpacitySpring = useSpring(appearOpacity, {
@@ -58,13 +56,13 @@ export default function Header({ name, email, imgSrc }: HeaderProps) {
     damping: 100,
   });
 
-  const scale = useTransform(scrollY, [0, 200], [1, 0.5]);
+  const scale = useTransform(scrollY, [0, 200], [1, 0.6]);
   const scaleSpring = useSpring(scale, {
     stiffness: 500,
     damping: 100,
   });
 
-  const transformLeft = useTransform(scrollY, [0, 200], [0, -60]);
+  const transformLeft = useTransform(scrollY, [0, 200], [0, -50]);
   const transformLeftSpring = useSpring(transformLeft, {
     stiffness: 500,
     damping: 100,
@@ -142,7 +140,7 @@ export default function Header({ name, email, imgSrc }: HeaderProps) {
             transition={{ enter: { delay: 0.2, duration: 0.5 } }}
           >
             <VStack spacing={0} align="left">
-              <Heading size="2xl" pt={2} as="h1">
+              <Heading size={{ base: "xl", md: "2xl" }} pt={2} as="h1">
                 {name}
               </Heading>
               <Heading as="h2" size="lg" opacity={0.4}>

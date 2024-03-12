@@ -1,13 +1,9 @@
 import Head from "next/head";
 import {
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
   Button,
   Divider,
   HStack,
-  Heading,
+  Icon,
   IconButton,
   SlideFade,
   Text,
@@ -20,13 +16,15 @@ import Header from "@/components/Header";
 import ExperienceSection from "@/components/ExperienceSection";
 import Accordion from "@/components/Accordion";
 import EducationSection from "@/components/EducationSection";
-import { EmailIcon, MoonIcon } from "@chakra-ui/icons";
+import { MoonIcon } from "@chakra-ui/icons";
 import MoreAboutMe from "@/components/MoreAboutMe";
 import { Link } from "@chakra-ui/next-js";
 import QuoteText from "@/components/QuoteText";
+import { FaGithub } from "react-icons/fa";
 
 export default function Home() {
   const { toggleColorMode } = useColorMode();
+
   return (
     <>
       <Head>
@@ -74,7 +72,7 @@ export default function Home() {
             </QuoteText>
             <HStack>
               <Link href={`mailto:${content.email}`}>
-                <Button size="lg">Email Me</Button>
+                <Button size="lg">Contact Me</Button>
               </Link>
             </HStack>
           </VStack>
@@ -106,13 +104,18 @@ export default function Home() {
           size="lg"
           borderRadius="full"
         />
-        <IconButton
-          aria-label="Toggle color mode"
-          icon={<MoonIcon />}
-          onClick={toggleColorMode}
-          size="lg"
-          borderRadius="full"
-        />
+        <Link
+          href="https://github.com/jrobinson041/personal-site-resume"
+          isExternal
+        >
+          <IconButton
+            aria-label="Github Repo"
+            icon={<Icon as={FaGithub} />}
+            onClick={toggleColorMode}
+            size="lg"
+            borderRadius="full"
+          />
+        </Link>
       </VStack>
     </>
   );

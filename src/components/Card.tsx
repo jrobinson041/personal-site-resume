@@ -1,11 +1,8 @@
-import { Box, BoxProps, useColorMode } from "@chakra-ui/react";
+import { Box, BoxProps, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 export default function Card(props: BoxProps) {
-  const { colorMode } = useColorMode();
-
-  const borderColor =
-    colorMode === "light" ? "blackAlpha.300" : "whiteAlpha.300";
+  const borderColor = useColorModeValue("blackAlpha.300", "whiteAlpha.300");
 
   return (
     <Box

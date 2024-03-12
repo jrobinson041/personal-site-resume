@@ -27,13 +27,7 @@ export default function MoreAboutMe({ content, images }: MoreAboutMeProps) {
           {item}
         </Text>
       ))}
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
-        slidesPerView="auto"
-        spaceBetween={10}
-        style={{ width: "100%" }}
-        navigation
-      >
+      <Swiper slidesPerView="auto" spaceBetween={10} style={{ width: "100%" }}>
         {images.map(({ src, caption }, idx) => (
           <SwiperSlide key={idx} style={{ maxWidth: "320px" }}>
             <Box>

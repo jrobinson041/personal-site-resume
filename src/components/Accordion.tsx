@@ -31,7 +31,7 @@ export default function Accordion({ sections }: AccordionProps) {
               }, 300);
             }}
           >
-            <Heading as="h2" size="2xl" opacity="0.6" flex={1} textAlign="left">
+            <Heading as="h2" size="2xl" opacity={0.4} flex={1} textAlign="left">
               {title}
             </Heading>
             <AccordionIcon fontSize="2rem" />
