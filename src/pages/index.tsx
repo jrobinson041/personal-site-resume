@@ -96,9 +96,11 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Button
+                  as={Link}
+                  href="/resume.pdf"
                   size="md"
                   leftIcon={<Icon as={MdOutlineFileDownload} />}
-                  onClick={() => window.print()}
+                  // onClick={() => window.print()}
                   variant="outline"
                 >
                   My Resume
