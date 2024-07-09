@@ -1,0 +1,26 @@
+@media screen {
+    .print-only {
+        display: none;
+    }
+}
+
+@media print {
+    body {
+        margin: 1rem !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    #resume-name {
+        line-height: 2.2rem !important;
+    }
+
+    #resume-occupation {
+        line-height: 1.6rem !important;
+    }
+
+}

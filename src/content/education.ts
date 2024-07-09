@@ -22,6 +22,12 @@ const education = {
     "Physics Club President",
     "Sigma Pi Sigma Honor Society",
   ],
+  printerBullets: [
+    "Graduated Magna Cum Laude, May 2018",
+    "B.A. in Physics, B.A. in Mathematics",
+    "GPA: 3.76 | 3.97 Mathematics | 3.73 Physics",
+    "ΣΠΣ Honor Society, Dean's List, Physics Club President",
+  ],
 } as const;
 
 export type TEducationContent = typeof education;
