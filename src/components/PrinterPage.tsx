@@ -32,14 +32,20 @@ export default function PrinterPage() {
     <div id="printer-page" style={{ padding: "1rem" }}>
       <Flex justify="space-between" align="center" w="full" mb={4}>
         <VStack spacing={0} align="left">
-          <Heading size="2xl" lineHeight="2.7rem" id="resume-name">
+          <Heading
+            size="2xl"
+            lineHeight="2.7rem"
+            id="resume-name"
+            opacity={0.8}
+          >
             {content.name}
           </Heading>
           <Heading
             size="lg"
-            opacity={0.6}
+            opacity={0.7}
             lineHeight="1.8rem"
             id="resume-occupation"
+            color="red.600"
           >
             Software Engineer
           </Heading>
@@ -68,7 +74,14 @@ export default function PrinterPage() {
         </Text>
       </Box>
 
-      <Heading my={3} opacity={0.8} fontSize="xl" fontWeight={500}>
+      <Heading
+        mt={3}
+        mb={2}
+        opacity={0.7}
+        color="red.600"
+        fontSize="xl"
+        fontWeight={700}
+      >
         Experience
       </Heading>
 
@@ -112,7 +125,13 @@ export default function PrinterPage() {
 
       <SimpleGrid templateColumns="52% 48%" mt={2}>
         <VStack p={1} spacing={0} align="flext-start">
-          <Heading mb={1} opacity={0.8} fontSize="xl" fontWeight={500}>
+          <Heading
+            pb={1}
+            opacity={0.7}
+            color="red.600"
+            fontSize="xl"
+            fontWeight={700}
+          >
             Education
           </Heading>
           <Text fontSize="xl" opacity={0.9} fontWeight={400}>
@@ -142,7 +161,14 @@ export default function PrinterPage() {
           borderLeftWidth="1px"
           borderColor={borderColor}
         >
-          <Heading mb={2} ml={4} opacity={0.8} fontSize="xl" fontWeight={500}>
+          <Heading
+            pb={2}
+            ml={4}
+            opacity={0.7}
+            color="red.600"
+            fontSize="xl"
+            fontWeight={700}
+          >
             Skills
           </Heading>
 
