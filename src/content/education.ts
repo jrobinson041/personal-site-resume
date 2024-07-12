@@ -15,6 +15,7 @@ const education = {
       gpa: 3.97,
     },
   ],
+  abbreviatedDegrees: "B.A. Physics, B.A. Mathematics",
   tags: [
     "Overall GPA 3.76",
     "Magna Cum Laude",
@@ -24,7 +25,7 @@ const education = {
   ],
   printerBullets: [
     "Graduated Magna Cum Laude, May 2018",
-    "B.A. in Physics (3.73), B.A. in Mathematics (3.97)",
+    "GPA: 3.76 | 3.97 Mathematics | 3.73 Physics",
     "ΣΠΣ Honor Society, Dean's List, Physics Club President",
   ],
 } as const;

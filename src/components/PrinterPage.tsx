@@ -111,12 +111,15 @@ export default function PrinterPage() {
       </VStack>
 
       <SimpleGrid templateColumns="52% 48%" mt={2}>
-        <VStack p={1} spacing={1} align="flext-start">
+        <VStack p={1} spacing={0} align="flext-start">
           <Heading mb={1} opacity={0.8} fontSize="xl" fontWeight={500}>
             Education
           </Heading>
           <Text fontSize="xl" opacity={0.9} fontWeight={400}>
             {content.education.university.name}
+          </Text>
+          <Text fontSize="lg" opacity={0.9} fontWeight={100}>
+            {content.education.abbreviatedDegrees}
           </Text>
           <VStack
             spacing={0}
