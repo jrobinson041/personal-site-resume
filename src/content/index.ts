@@ -39,7 +39,7 @@ const content = {
     "SQL",
     "DB2",
     "RPG",
-    "IMB i",
+    "IBM i",
     "SEO",
   ],
 };

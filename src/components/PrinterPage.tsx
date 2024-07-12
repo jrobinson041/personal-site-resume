@@ -66,11 +66,12 @@ export default function PrinterPage() {
           fontSize="2rem"
           top={-1}
           left="50%"
-          transform="translateX(-50%) translateY(-50%)"
+          transform="translateX(-50%) translateY(-51%) scaleX(80%) scaleY(120%)"
           color={borderColor}
           fontWeight={100}
+          letterSpacing={1}
         >
-          {"//"}
+          {"</>"}
         </Text>
       </Box>
 
