@@ -126,7 +126,7 @@ export default function Home() {
                 </Link>
                 <Button
                   as={Link}
-                  href="/resume.pdf"
+                  href="/John Robinson Resume.pdf"
                   size="md"
                   leftIcon={<Icon as={MdOutlineFileDownload} />}
                   // onClick={() => window.print()}
