@@ -68,7 +68,7 @@ export default function PrinterPage() {
         </Text>
       </Box>
 
-      <Heading my={4} opacity={0.8} fontSize="2xl" fontWeight={500}>
+      <Heading my={3} opacity={0.8} fontSize="xl" fontWeight={500}>
         Experience
       </Heading>
 
@@ -86,11 +86,14 @@ export default function PrinterPage() {
           >
             <Flex justify="space-between" w="full">
               <VStack align="flex-start" spacing={0}>
-                <Heading fontSize="lg" fontWeight="light">
+                <Heading fontSize="lg" fontWeight={100}>
                   {item.title}
                 </Heading>
                 <Text fontWeight="bold" fontSize="lg" opacity={0.8}>
-                  {item.company} - {item.location}
+                  {item.company}{" "}
+                  <Text as="span" fontWeight="normal">
+                    - {item.location}
+                  </Text>
                 </Text>
               </VStack>
               <Text fontWeight="bold" fontSize="sm" opacity={0.5}>
@@ -98,7 +101,7 @@ export default function PrinterPage() {
               </Text>
             </Flex>
 
-            <UnorderedList spacing={2} mt={2} mb={1} fontSize="xs">
+            <UnorderedList spacing={1} mt={0} mb={1} fontSize="xs">
               {item.notes.map((note, idx) => (
                 <ListItem key={idx}>{note}</ListItem>
               ))}
@@ -107,9 +110,9 @@ export default function PrinterPage() {
         ))}
       </VStack>
 
-      <SimpleGrid templateColumns="52% 48%" mt={6}>
+      <SimpleGrid templateColumns="52% 48%" mt={2}>
         <VStack p={1} spacing={1} align="flext-start">
-          <Heading mb={1} opacity={0.8} fontSize="2xl" fontWeight={500}>
+          <Heading mb={1} opacity={0.8} fontSize="xl" fontWeight={500}>
             Education
           </Heading>
           <Text fontSize="xl" opacity={0.9} fontWeight={400}>
@@ -136,7 +139,7 @@ export default function PrinterPage() {
           borderLeftWidth="1px"
           borderColor={borderColor}
         >
-          <Heading mb={2} ml={4} opacity={0.8} fontSize="2xl" fontWeight={500}>
+          <Heading mb={2} ml={4} opacity={0.8} fontSize="xl" fontWeight={500}>
             Skills
           </Heading>
 

@@ -24,8 +24,7 @@ const education = {
   ],
   printerBullets: [
     "Graduated Magna Cum Laude, May 2018",
-    "B.A. in Physics, B.A. in Mathematics",
-    "GPA: 3.76 | 3.97 Mathematics | 3.73 Physics",
+    "B.A. in Physics (3.73), B.A. in Mathematics (3.97)",
     "ΣΠΣ Honor Society, Dean's List, Physics Club President",
   ],
 } as const;
