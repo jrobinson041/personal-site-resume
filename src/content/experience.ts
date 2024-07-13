@@ -13,7 +13,7 @@ export type TExperienceItem = {
 
 const experience: TExperienceItem[] = [
   {
-    title: "Sr. Front-End Software Engineer",
+    title: "Senior Front-End Software Engineer",
     company: "Canoo",
     location: "Torrance, CA",
     start: "Jun. 2022",
@@ -71,7 +71,7 @@ export default experience;
 
 export const abbreviatedExperience: TExperienceItem[] = [
   {
-    title: "Sr. Front-End Software Engineer",
+    title: "Senior Front-End Software Engineer",
     company: "Canoo",
     location: "Torrance, CA",
     start: "Jun. 2022",
