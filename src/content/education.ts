@@ -24,7 +24,7 @@ const education = {
     "Sigma Pi Sigma Honor Society",
   ],
   printerBullets: [
-    "Graduated Magna Cum Laude, May 2018",
+    "Graduated Magna Cum Laude",
     "GPA: 3.76 | 3.97 Mathematics | 3.73 Physics",
     "ΣΠΣ Honor Society, Dean's List, Physics Club President",
   ],

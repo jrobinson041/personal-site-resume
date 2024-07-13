@@ -1,4 +1,4 @@
-import experience from "./experience";
+import { experience } from "./experience";
 import education from "./education";
 
 const content = {
@@ -24,7 +24,7 @@ const content = {
       },
     ],
   },
-  experience,
+  experience: experience,
   education,
   skills: [
     "React",
@@ -37,10 +37,8 @@ const content = {
     "TypeScript",
     "Python",
     "SQL",
-    "DB2",
-    "RPG",
-    "IBM i",
     "SEO",
+    "Product and Engineering Management",
   ],
 };
 

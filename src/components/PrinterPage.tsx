@@ -18,7 +18,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import content from "@/content";
-import { abbreviatedExperience } from "@/content/experience";
+import { experience } from "@/content/experience";
 import { FaLightbulb, FaMoon } from "react-icons/fa";
 import { AddIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
@@ -87,7 +87,7 @@ export default function PrinterPage() {
       </Heading>
 
       <VStack spacing={4}>
-        {abbreviatedExperience.map((item, idx) => (
+        {experience.map((item, idx) => (
           <Box
             key={idx}
             w="full"
