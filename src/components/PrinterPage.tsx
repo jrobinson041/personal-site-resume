@@ -26,10 +26,15 @@ interface PrinterPageProps {
   isBusinessOriented?: boolean;
 }
 
+const ACCENT_COLOR = "red.600";
+const BUSINESS_ACCENT_COLOR = "red.600";
+
 export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
   const { toggleColorMode } = useColorMode();
   const ToggleThemeIcon = useColorModeValue(FaMoon, FaLightbulb);
   const borderColor = useColorModeValue("gray.300", "gray.600");
+
+  const accentColor = isBusinessOriented ? BUSINESS_ACCENT_COLOR : ACCENT_COLOR;
 
   const experience = isBusinessOriented
     ? content.businessExperience
@@ -54,7 +59,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             opacity={0.7}
             lineHeight="1.8rem"
             id="resume-occupation"
-            color="red.600"
+            color={accentColor}
           >
             {isBusinessOriented ? (
               <span>
@@ -102,7 +107,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
         mt={3}
         mb={2}
         opacity={0.7}
-        color="red.600"
+        color={accentColor}
         fontSize="xl"
         fontWeight={700}
       >
@@ -152,7 +157,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
           <Heading
             pb={1}
             opacity={0.7}
-            color="red.600"
+            color={accentColor}
             fontSize="xl"
             fontWeight={700}
           >
@@ -189,7 +194,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             pb={2}
             ml={4}
             opacity={0.7}
-            color="red.600"
+            color={accentColor}
             fontSize="xl"
             fontWeight={700}
           >
@@ -204,7 +209,9 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
                 variant="subtle"
                 py={1}
                 px={2}
-                m={1}
+                mt={0}
+                mb={2}
+                mx={1}
                 borderRadius="36px"
                 transition="all 0.2s ease-in-out"
                 _hover={{ transform: "scale(1.05)" }}

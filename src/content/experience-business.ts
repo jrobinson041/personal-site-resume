@@ -19,7 +19,7 @@ export const businessExperience: TExperienceItem[] = [
     start: "Jun. 2022",
     end: "Present",
     notes: [
-      "Engineered Generative AI vehicle-connected web applications for clients such as Walmart and USPS, extending our physical product offering with a subscription software (SaaS) model.",
+      "Engineered cloud-based Generative AI vehicle-connected web applications for clients such as Walmart and USPS, extending our physical product offering with a subscription software (SaaS) model.",
       "Architected and delivered an immersive 3D virtual showroom; a highly effective marketing tool for customers to explore our offerings, enhancing customer engagement and product visibility.",
       // "Led development of an Augmented Reality experience and demonstrated at Google Next 2023. Virtual Reality goggles allowed users to explore a real Canoo vehicle, resulting in increased brand visibility and customer interaction.",
       "Served as Technical Lead on a mobile app successfully delivered to the US Military which facilitated the trial of our product, expanding interest and adaptation into a new market.",
