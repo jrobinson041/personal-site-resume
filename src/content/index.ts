@@ -1,5 +1,6 @@
 import { experience } from "./experience";
 import education from "./education";
+import businessExperience from "./experience-business";
 
 const content = {
   name: "John Robinson",
@@ -25,6 +26,7 @@ const content = {
     ],
   },
   experience: experience,
+  businessExperience,
   education,
   skills: [
     "React",
@@ -39,6 +41,15 @@ const content = {
     "SQL",
     "SEO",
     "Product and Engineering Management",
+  ],
+  businessSkills: [
+    "Product and Engineering Management",
+    "Generative AI",
+    "Search Engine Optimization",
+    "Cloud Technology Implementation",
+    "Website Analytics",
+    "Lean Startup Principles",
+    "Digital Marketing Experiences",
   ],
 };
 

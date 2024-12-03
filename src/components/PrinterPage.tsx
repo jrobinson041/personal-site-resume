@@ -18,15 +18,24 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import content from "@/content";
-import { experience } from "@/content/experience";
 import { FaLightbulb, FaMoon } from "react-icons/fa";
 import { AddIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
 
-export default function PrinterPage() {
+interface PrinterPageProps {
+  isBusinessOriented?: boolean;
+}
+
+export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
   const { toggleColorMode } = useColorMode();
   const ToggleThemeIcon = useColorModeValue(FaMoon, FaLightbulb);
   const borderColor = useColorModeValue("gray.300", "gray.600");
+
+  const experience = isBusinessOriented
+    ? content.businessExperience
+    : content.experience;
+
+  const skills = isBusinessOriented ? content.businessSkills : content.skills;
 
   return (
     <div id="printer-page" style={{ padding: "1rem" }}>
@@ -47,10 +56,24 @@ export default function PrinterPage() {
             id="resume-occupation"
             color="red.600"
           >
-            Software Engineer
+            {isBusinessOriented ? (
+              <span>
+                Software Engineer{"  "}
+                <Heading as="span" fontWeight={100}>
+                  |
+                </Heading>
+                {"  "}
+                Technology Strategist
+              </span>
+            ) : (
+              "Software Engineer"
+            )}
           </Heading>
           <Text fontSize="md" opacity={0.6}>
-            {content.email} | {content.phone} |{"  "}
+            {content.email}
+            {"  "}|{"  "}
+            {content.phone}
+            {"  "}|{"   "}
             <Link href={content.personalSite.href}>
               {content.personalSite.text}
             </Link>
@@ -136,10 +159,10 @@ export default function PrinterPage() {
             Education
           </Heading>
           <Text fontSize="xl" opacity={0.9} fontWeight={400}>
-            {content.education.university.name}
+            {content.education.abbreviatedDegrees}
           </Text>
           <Text fontSize="lg" opacity={0.9} fontWeight={100}>
-            {content.education.abbreviatedDegrees}
+            {content.education.university.name}
           </Text>
           <VStack
             spacing={0}
@@ -174,7 +197,7 @@ export default function PrinterPage() {
           </Heading>
 
           <Box textAlign="center">
-            {content.skills.map((skill, idx) => (
+            {skills.map((skill, idx) => (
               <Tag
                 key={idx}
                 size="sm"
