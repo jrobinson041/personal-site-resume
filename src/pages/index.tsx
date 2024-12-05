@@ -50,8 +50,9 @@ export default function Home() {
               px={{ base: 4, md: 16 }}
               pt={16}
               pb={12}
-              mx={{ base: 2, lg: -16 }}
-              mb={8}
+              mx={{ base: 2, lg: -4 }}
+              mt={4}
+              mb={16}
               borderRadius={{ base: "2xl", md: "50px" }}
               // background="roundedIn"
               boxShadow={{ base: "hover.sm", md: "hover.lg" }}
