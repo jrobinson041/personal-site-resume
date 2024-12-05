@@ -1,12 +1,11 @@
 import { ReactNode } from "react";
+import { Heading } from "@chakra-ui/react";
 import {
-  AccordionButton,
-  AccordionIcon,
   AccordionItem,
-  AccordionPanel,
-  Accordion as ChakraAccordion,
-  Heading,
-} from "@chakra-ui/react";
+  AccordionItemContent,
+  AccordionItemTrigger,
+  AccordionRoot,
+} from "@/components/ui/accordion";
 
 interface AccordionProps {
   sections: {
@@ -17,10 +16,10 @@ interface AccordionProps {
 
 export default function Accordion({ sections }: AccordionProps) {
   return (
-    <ChakraAccordion defaultIndex={0}>
+    <AccordionRoot defaultValue={[sections[0].title]}>
       {sections.map(({ title, content }) => (
-        <AccordionItem py={4} key={title}>
-          <AccordionButton
+        <AccordionItem py={4} key={title} value={title}>
+          <AccordionItemTrigger
             onClick={(e) => {
               const el = e.currentTarget;
               setTimeout(() => {
@@ -34,13 +33,12 @@ export default function Accordion({ sections }: AccordionProps) {
             <Heading as="h2" size="2xl" opacity={0.4} flex={1} textAlign="left">
               {title}
             </Heading>
-            <AccordionIcon fontSize="2rem" />
-          </AccordionButton>
-          <AccordionPanel pt={8} px={{ base: 0, md: 4 }}>
+          </AccordionItemTrigger>
+          <AccordionItemContent pt={8} px={{ base: 0, md: 4 }}>
             {content}
-          </AccordionPanel>
+          </AccordionItemContent>
         </AccordionItem>
       ))}
-    </ChakraAccordion>
+    </AccordionRoot>
   );
 }

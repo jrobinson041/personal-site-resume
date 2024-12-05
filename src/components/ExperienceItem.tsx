@@ -1,22 +1,7 @@
 import { TExperienceItem } from "@/content/experience";
-import { AddIcon, ExternalLinkIcon } from "@chakra-ui/icons";
-import { Link } from "@chakra-ui/next-js";
-import {
-  Box,
-  Flex,
-  HStack,
-  Heading,
-  ListItem,
-  Show,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
-  TagRightIcon,
-  Text,
-  UnorderedList,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, List } from "@chakra-ui/react";
 import Card from "./Card";
+import { useColorModeValue } from "./ui/color-mode";
 
 interface ExperienceItemProps extends TExperienceItem {
   isFirst?: boolean;
@@ -53,26 +38,22 @@ export default function ExperienceItem({
           <Heading size="lg" fontWeight={100}>
             {title}
           </Heading>
-          <Show above="sm">
-            <Heading size="sm" opacity={0.5}>
-              {start} — {end}
-            </Heading>
-          </Show>
+          <Heading hideBelow="md" size="sm" opacity={0.5}>
+            {start} — {end}
+          </Heading>
         </Flex>
         <Heading fontSize="1.5rem" opacity={0.8}>
           {company} - {location}
         </Heading>
-        <Show below="md">
-          <Heading size="sm" opacity={0.5}>
-            {start} — {end}
-          </Heading>
-        </Show>
-        <UnorderedList spacing={4} mt={6} mb={1}>
+        <Heading hideBelow="md" size="sm" opacity={0.5}>
+          {start} — {end}
+        </Heading>
+        <List.Root gap={4} mt={6} mb={1}>
           {notes.map((note, idx) => (
-            <ListItem key={idx}>{note}</ListItem>
+            <List.Item key={idx}>{note}</List.Item>
           ))}
-        </UnorderedList>
-        {demos && (
+        </List.Root>
+        {/* {demos && (
           <>
             <Text mt={6} fontWeight={700} fontSize="sm">
               Check it out:
@@ -87,16 +68,16 @@ export default function ExperienceItem({
                     borderRadius="36px"
                     transition="all 0.2s ease-in-out"
                     _hover={{ transform: "scale(1.05)" }}
+                    startElement={<Icon as={FaPlus} />}
+                    endElement={<Icon as={FaExternalLinkAlt} />}
                   >
-                    <TagLeftIcon as={AddIcon} mr={2} />
-                    <TagLabel>{demo.title}</TagLabel>
-                    <TagRightIcon as={ExternalLinkIcon} ml={1} />
+                    {demo.title}
                   </Tag>
                 </Link>
               ))}
             </HStack>
           </>
-        )}
+        )} */}
       </Card>
       <Box
         bg={mapColor}

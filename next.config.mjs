@@ -12,7 +12,10 @@ const nextConfig = {
       destination: "/John Robinson Resume - Business Management.pdf",
       permanent: false,
     }
-  ])
+  ]),
+  experimental: {
+    optimizePackageImports: ["@chakra-ui/react"],
+  },
 };
 
 export default nextConfig;

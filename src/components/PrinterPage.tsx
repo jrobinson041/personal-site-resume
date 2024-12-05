@@ -1,40 +1,54 @@
 import {
-  Avatar,
   Box,
-  Divider,
+  Separator,
   Flex,
   Heading,
   Icon,
   IconButton,
-  ListItem,
   SimpleGrid,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
   Text,
-  UnorderedList,
   VStack,
-  useColorMode,
-  useColorModeValue,
+  parseColor,
+  HStack,
+  List,
 } from "@chakra-ui/react";
+import {
+  ColorPickerArea,
+  ColorPickerContent,
+  ColorPickerControl,
+  ColorPickerEyeDropper,
+  ColorPickerInput,
+  ColorPickerLabel,
+  ColorPickerRoot,
+  ColorPickerSliders,
+  ColorPickerTrigger,
+} from "@/components/ui/color-picker";
 import content from "@/content";
-import { FaLightbulb, FaMoon } from "react-icons/fa";
-import { AddIcon } from "@chakra-ui/icons";
-import { Link } from "@chakra-ui/next-js";
+import { FaLightbulb, FaMoon, FaPlus } from "react-icons/fa";
+import { Link as ChakraLink } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { useState } from "react";
+import { Avatar } from "./ui/avatar";
+import { useColorMode, useColorModeValue } from "./ui/color-mode";
+import { Tag } from "./ui/tag";
 
 interface PrinterPageProps {
   isBusinessOriented?: boolean;
 }
 
 const ACCENT_COLOR = "red.600";
-const BUSINESS_ACCENT_COLOR = "red.600";
+const BUSINESS_ACCENT_COLOR = "blue.600";
 
 export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
   const { toggleColorMode } = useColorMode();
   const ToggleThemeIcon = useColorModeValue(FaMoon, FaLightbulb);
   const borderColor = useColorModeValue("gray.300", "gray.600");
 
-  const accentColor = isBusinessOriented ? BUSINESS_ACCENT_COLOR : ACCENT_COLOR;
+  const defaultAccentColor = isBusinessOriented
+    ? BUSINESS_ACCENT_COLOR
+    : ACCENT_COLOR;
+
+  const [accentColor, setAccentColor] = useState(defaultAccentColor);
 
   const experience = isBusinessOriented
     ? content.businessExperience
@@ -43,9 +57,9 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
   const skills = isBusinessOriented ? content.businessSkills : content.skills;
 
   return (
-    <div id="printer-page" style={{ padding: "1rem" }}>
+    <div id="printer-page" style={{ padding: "1rem", paddingTop: "1.5rem" }}>
       <Flex justify="space-between" align="center" w="full" mb={4}>
-        <VStack spacing={0} align="left">
+        <VStack gap={0} align="left">
           <Heading
             size="2xl"
             lineHeight="2.7rem"
@@ -57,14 +71,13 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
           <Heading
             size="lg"
             opacity={0.7}
-            lineHeight="1.8rem"
             id="resume-occupation"
             color={accentColor}
           >
             {isBusinessOriented ? (
               <span>
                 Software Engineer{"  "}
-                <Heading as="span" fontWeight={100}>
+                <Heading size="lg" as="span" fontWeight={100}>
                   |
                 </Heading>
                 {"  "}
@@ -79,16 +92,18 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             {"  "}|{"  "}
             {content.phone}
             {"  "}|{"   "}
-            <Link href={content.personalSite.href}>
-              {content.personalSite.text}
-            </Link>
+            <ChakraLink asChild>
+              <NextLink href={content.personalSite.href}>
+                {content.personalSite.text}
+              </NextLink>
+            </ChakraLink>
           </Text>
         </VStack>
         <Avatar name={content.name} src={content.avatarSrc} size="xl" />
       </Flex>
 
       <Box position="relative">
-        <Divider borderColor={borderColor} />
+        <Separator borderColor={borderColor} />
         <Text
           position="absolute"
           fontSize="2rem"
@@ -104,7 +119,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
       </Box>
 
       <Heading
-        mt={3}
+        mt={2}
         mb={2}
         opacity={0.7}
         color={accentColor}
@@ -114,7 +129,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
         Experience
       </Heading>
 
-      <VStack spacing={4}>
+      <VStack gap={4}>
         {experience.map((item, idx) => (
           <Box
             key={idx}
@@ -127,7 +142,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             px={3}
           >
             <Flex justify="space-between" w="full">
-              <VStack align="flex-start" spacing={0}>
+              <VStack align="flex-start" gap={0}>
                 <Heading fontSize="lg" fontWeight={100}>
                   {item.title}
                 </Heading>
@@ -143,17 +158,17 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
               </Text>
             </Flex>
 
-            <UnorderedList spacing={1} mt={0} mb={1} fontSize="xs">
+            <List.Root gap={1} mt={0} mb={1} fontSize="xs">
               {item.notes.map((note, idx) => (
-                <ListItem key={idx}>{note}</ListItem>
+                <List.Item key={idx}>{note}</List.Item>
               ))}
-            </UnorderedList>
+            </List.Root>
           </Box>
         ))}
       </VStack>
 
       <SimpleGrid templateColumns="52% 48%" mt={2}>
-        <VStack p={1} spacing={0} align="flext-start">
+        <VStack p={1} gap={0} align="flext-start">
           <Heading
             pb={1}
             opacity={0.7}
@@ -170,7 +185,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             {content.education.university.name}
           </Text>
           <VStack
-            spacing={0}
+            gap={0}
             mt={2}
             mb={1}
             fontSize="sm"
@@ -215,16 +230,16 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
                 borderRadius="36px"
                 transition="all 0.2s ease-in-out"
                 _hover={{ transform: "scale(1.05)" }}
+                startElement={<Icon as={FaPlus} />}
               >
-                <TagLeftIcon as={AddIcon} mr={2} />
-                <TagLabel>{skill}</TagLabel>
+                {skill}
               </Tag>
             ))}
           </Box>
         </Box>
       </SimpleGrid>
 
-      <VStack
+      {/* <VStack
         position="fixed"
         bottom={2}
         right={2}
@@ -233,12 +248,27 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
       >
         <IconButton
           aria-label="Toggle color mode"
-          icon={<Icon as={ToggleThemeIcon} />}
           onClick={toggleColorMode}
           size="lg"
           borderRadius="full"
-        />
-      </VStack>
+        >
+          <Icon as={ToggleThemeIcon} />
+        </IconButton>
+        <ColorPickerRoot defaultValue={parseColor("#eb5e41")} maxW="200px">
+          <ColorPickerLabel>Color</ColorPickerLabel>
+          <ColorPickerControl>
+            <ColorPickerInput />
+            <ColorPickerTrigger />
+          </ColorPickerControl>
+          <ColorPickerContent>
+            <ColorPickerArea />
+            <HStack>
+              <ColorPickerEyeDropper />
+              <ColorPickerSliders />
+            </HStack>
+          </ColorPickerContent>
+        </ColorPickerRoot>
+      </VStack> */}
     </div>
   );
 }

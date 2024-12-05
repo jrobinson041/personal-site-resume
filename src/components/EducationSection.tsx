@@ -1,17 +1,8 @@
-import { CheckIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  HStack,
-  Heading,
-  Show,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, HStack, Heading, Icon, Text, VStack } from "@chakra-ui/react";
 import Card from "./Card";
 import { TEducationContent } from "@/content/education";
+import { FaCheck } from "react-icons/fa";
+import { Tag } from "./ui/tag";
 
 interface EducationSectionProps {
   content: TEducationContent;
@@ -27,7 +18,7 @@ export default function EducationSection({ content }: EducationSectionProps) {
         Graduated {content.university.graduated}
       </Heading>
 
-      <HStack spacing={2} w="full" mb={8}>
+      <HStack gap={2} w="full" mb={8}>
         {content.degrees.map((degree) => (
           <Card
             borderRadius="16px"
@@ -48,11 +39,14 @@ export default function EducationSection({ content }: EducationSectionProps) {
             <Text fontSize="1.75rem" fontWeight={600} opacity={0.8}>
               {degree.area}
             </Text>
-            <Show above="sm">
-              <Text fontSize="0.9rem" fontWeight={100} opacity={0.5}>
-                {degree.gpa} GPA
-              </Text>
-            </Show>
+            <Text
+              hideBelow="md"
+              fontSize="0.9rem"
+              fontWeight={100}
+              opacity={0.5}
+            >
+              {degree.gpa} GPA
+            </Text>
           </Card>
         ))}
       </HStack>
@@ -67,9 +61,9 @@ export default function EducationSection({ content }: EducationSectionProps) {
             transition="all 0.2s ease-in-out"
             key={tag}
             m={2}
+            startElement={<Icon as={FaCheck} />}
           >
-            <TagLeftIcon as={CheckIcon} mr={2} />
-            <TagLabel>{tag}</TagLabel>
+            {tag}
           </Tag>
         ))}
       </Box>

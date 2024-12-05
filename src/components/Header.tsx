@@ -139,7 +139,7 @@ export default function Header({ name, email, imgSrc }: HeaderProps) {
             offsetY="0px"
             transition={{ enter: { delay: 0.2, duration: 0.5 } }}
           >
-            <VStack spacing={0} align="left">
+            <VStack gap={0} align="left">
               <Heading size={{ base: "xl", md: "2xl" }} pt={2} as="h1">
                 {name}
               </Heading>

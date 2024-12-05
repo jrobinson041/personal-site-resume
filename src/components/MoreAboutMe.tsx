@@ -1,9 +1,8 @@
 import { Box, Text, VStack } from "@chakra-ui/react";
-import Image from "next/image";
+// import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 
 interface MoreAboutMeProps {
   content: string[];
@@ -15,7 +14,7 @@ interface MoreAboutMeProps {
 
 export default function MoreAboutMe({ content, images }: MoreAboutMeProps) {
   return (
-    <VStack textAlign="center" spacing={8} py={8}>
+    <VStack textAlign="center" gap={8} py={8}>
       {content.map((item, idx) => (
         <Text
           fontWeight={100}
@@ -32,12 +31,12 @@ export default function MoreAboutMe({ content, images }: MoreAboutMeProps) {
           <SwiperSlide key={idx} style={{ maxWidth: "320px" }}>
             <Box>
               <Box borderRadius="xl" overflow="hidden">
-                <Image
+                {/* <Image
                   src={src}
                   alt="flying a plane"
                   height={1000}
                   width={1000}
-                />
+                /> */}
               </Box>
               <Text opacity={0.5} fontSize="sm">
                 {caption}

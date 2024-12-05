@@ -1,8 +1,10 @@
-import theme from "@/theme";
-import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import "../styles.css";
 import Head from "next/head";
+import system from "@/theme";
+import { ColorModeProvider } from "@/components/ui/color-mode";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Provider } from "@/components/ui/provider";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -45,9 +47,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ChakraProvider theme={theme}>
+      <Provider>
         <Component {...pageProps} />
-      </ChakraProvider>
+      </Provider>
     </>
   );
 }
