@@ -21,6 +21,8 @@ import content from "@/content";
 import { FaLightbulb, FaMoon } from "react-icons/fa";
 import { AddIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
+import ColorPicker from "./ColorPicker";
+import { useState } from "react";
 
 interface PrinterPageProps {
   isBusinessOriented?: boolean;
@@ -34,7 +36,11 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
   const ToggleThemeIcon = useColorModeValue(FaMoon, FaLightbulb);
   const borderColor = useColorModeValue("gray.300", "gray.600");
 
-  const accentColor = isBusinessOriented ? BUSINESS_ACCENT_COLOR : ACCENT_COLOR;
+  const defaultAccentColor = isBusinessOriented
+    ? BUSINESS_ACCENT_COLOR
+    : ACCENT_COLOR;
+
+  const [accentColor, setAccentColor] = useState(defaultAccentColor);
 
   const experience = isBusinessOriented
     ? content.businessExperience
@@ -42,8 +48,20 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
 
   const skills = isBusinessOriented ? content.businessSkills : content.skills;
 
+  const educationBullets = isBusinessOriented
+    ? content.education.printerBusinessBullets
+    : content.education.printerBullets;
+
   return (
-    <div id="printer-page" style={{ padding: "1rem" }}>
+    <div
+      id="printer-page"
+      style={{
+        padding: "1rem",
+        paddingTop: "1.5rem",
+        maxWidth: "52rem",
+        margin: "auto",
+      }}
+    >
       <Flex justify="space-between" align="center" w="full" mb={4}>
         <VStack spacing={0} align="left">
           <Heading
@@ -57,14 +75,13 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
           <Heading
             size="lg"
             opacity={0.7}
-            lineHeight="1.8rem"
             id="resume-occupation"
             color={accentColor}
           >
             {isBusinessOriented ? (
               <span>
                 Software Engineer{"  "}
-                <Heading as="span" fontWeight={100}>
+                <Heading size="lg" as="span" fontWeight={100}>
                   |
                 </Heading>
                 {"  "}
@@ -84,7 +101,15 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             </Link>
           </Text>
         </VStack>
-        <Avatar name={content.name} src={content.avatarSrc} size="xl" />
+        <Avatar
+          // borderRadius="sm"
+          name={content.name}
+          src={content.avatarSrc}
+          size="xl"
+          boxShadow="md"
+          // borderColor={accentColor}
+          // borderWidth="2px"
+        />
       </Flex>
 
       <Box position="relative">
@@ -104,7 +129,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
       </Box>
 
       <Heading
-        mt={3}
+        mt={2}
         mb={2}
         opacity={0.7}
         color={accentColor}
@@ -177,7 +202,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             fontWeight={100}
             align="flex-start"
           >
-            {content.education.printerBullets.map((bullet, idx) => (
+            {educationBullets.map((bullet, idx) => (
               <Text key={idx}>{bullet}</Text>
             ))}
           </VStack>
@@ -231,6 +256,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
         zIndex="overlay"
         className="no-print"
       >
+        <ColorPicker value={accentColor} setValue={setAccentColor} />
         <IconButton
           aria-label="Toggle color mode"
           icon={<Icon as={ToggleThemeIcon} />}
