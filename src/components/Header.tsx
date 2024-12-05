@@ -33,7 +33,7 @@ const bgGradient =
 
 export default function Header({ name, email, imgSrc }: HeaderProps) {
   const { scrollY } = useScroll();
-  const bgColor = useColorModeValue("gray.50", "gray.700");
+  const bgColor = useColorModeValue("gray.50", "gray.600");
 
   const appearOpacity = useTransform(scrollY, [0, 200], [0, 1]);
   const appearOpacitySpring = useSpring(appearOpacity, {
