@@ -34,7 +34,7 @@ export default function ExperienceItem({
   isFirst,
   isLast,
 }: ExperienceItemProps) {
-  const mapColor = useColorModeValue("gray.200", "gray.700");
+  const mapColor = useColorModeValue("gray.200", "gray.600");
   const getMapLineTop = () => {
     if (isFirst) return "50%";
     if (isLast) return;
