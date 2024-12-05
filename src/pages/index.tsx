@@ -50,10 +50,11 @@ export default function Home() {
               px={{ base: 4, md: 16 }}
               pt={16}
               pb={12}
+              mx={{ base: 2, lg: -16 }}
               mb={8}
-              borderRadius="50px"
+              borderRadius={{ base: "2xl", md: "50px" }}
               // background="roundedIn"
-              boxShadow="hover.lg"
+              boxShadow={{ base: "hover.sm", md: "hover.lg" }}
             >
               <QuoteText fontWeight={100} opacity={0.8} fontSize="xl">
                 Hi, I&apos;m{" "}

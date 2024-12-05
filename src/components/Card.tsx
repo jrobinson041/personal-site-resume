@@ -8,7 +8,7 @@ export default function Card(props: BoxProps) {
     <Box
       as={motion.div}
       borderWidth="1px"
-      borderRadius="3xl"
+      borderRadius={{ base: "2xl", md: "3xl" }}
       borderColor={borderColor}
       boxShadow="inner"
       w="full"
