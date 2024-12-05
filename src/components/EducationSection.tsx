@@ -30,6 +30,7 @@ export default function EducationSection({ content }: EducationSectionProps) {
       <HStack spacing={2} w="full" mb={8}>
         {content.degrees.map((degree) => (
           <Card
+            borderWidth={0}
             borderRadius="16px"
             style={{
               display: "flex",
@@ -41,6 +42,8 @@ export default function EducationSection({ content }: EducationSectionProps) {
             p={{ base: 4, md: 6 }}
             pt={{ base: 4, md: 8 }}
             key={degree.area}
+            bg="roundedOut"
+            boxShadow="inset.sm"
           >
             <Text fontSize="0.9rem" fontWeight={100} opacity={0.5} mb={-2}>
               {degree.type}
@@ -67,6 +70,8 @@ export default function EducationSection({ content }: EducationSectionProps) {
             transition="all 0.2s ease-in-out"
             key={tag}
             m={2}
+            bg="roundedOut"
+            boxShadow="hover.xs"
           >
             <TagLeftIcon as={CheckIcon} mr={2} />
             <TagLabel>{tag}</TagLabel>

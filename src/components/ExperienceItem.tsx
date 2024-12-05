@@ -48,7 +48,13 @@ export default function ExperienceItem({
 
   return (
     <Box w="100%" ml={{ base: 0, md: 8 }} position="relative">
-      <Card p={{ base: 4, md: 8 }} overflow="visible">
+      <Card
+        p={{ base: 4, md: 8 }}
+        overflow="visible"
+        // boxShadow="inset.lg"
+        bg="roundedIn"
+        borderWidth={0}
+      >
         <Flex justify="space-between" align="center" mb={1}>
           <Heading size="lg" fontWeight={100}>
             {title}

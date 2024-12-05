@@ -168,7 +168,12 @@ export default function Header({ name, email, imgSrc }: HeaderProps) {
             offsetY="0px"
             transition={{ enter: { delay: 0.2, duration: 0.5 } }}
           >
-            <Avatar name={name} src={imgSrc} size={{ base: "xl", md: "2xl" }} />
+            <Avatar
+              name={name}
+              src={imgSrc}
+              size={{ base: "xl", md: "2xl" }}
+              // boxShadow="inset.sm"
+            />
           </SlideFade>
         </ChakraBox>
       </ChakraBox>

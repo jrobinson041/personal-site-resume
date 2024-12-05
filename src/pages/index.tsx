@@ -1,6 +1,6 @@
 import {
+  Box,
   Button,
-  Divider,
   HStack,
   Icon,
   IconButton,
@@ -37,8 +37,6 @@ export default function Home() {
         />
 
         <PageContainer>
-          <Divider />
-
           <SlideFade
             in
             offsetX="20px"
@@ -50,7 +48,12 @@ export default function Home() {
               textAlign="left"
               spacing={12}
               px={{ base: 4, md: 16 }}
-              py={16}
+              pt={16}
+              pb={12}
+              mb={8}
+              borderRadius="50px"
+              // background="roundedIn"
+              boxShadow="hover.lg"
             >
               <QuoteText fontWeight={100} opacity={0.8} fontSize="xl">
                 Hi, I&apos;m{" "}
@@ -72,7 +75,7 @@ export default function Home() {
                   <Button
                     size="md"
                     leftIcon={<Icon as={MdOutlineMail} />}
-                    variant="outline"
+                    variant="hovering"
                   >
                     Contact Me
                   </Button>
@@ -83,7 +86,7 @@ export default function Home() {
                   size="md"
                   leftIcon={<Icon as={MdOutlineFileDownload} />}
                   // onClick={() => window.print()}
-                  variant="outline"
+                  variant="hovering"
                 >
                   My Resume
                 </Button>
