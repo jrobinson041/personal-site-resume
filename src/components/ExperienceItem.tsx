@@ -51,8 +51,8 @@ export default function ExperienceItem({
       <Card
         p={{ base: 4, md: 8 }}
         overflow="visible"
-        // boxShadow="inset.lg"
-        bg="roundedIn"
+        boxShadow="inset.sm"
+        bg="roundedOut"
         borderWidth={0}
       >
         <Flex justify="space-between" align="center" mb={1}>

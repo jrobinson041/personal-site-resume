@@ -102,10 +102,10 @@ export default function Header({ name, email, imgSrc }: HeaderProps) {
         position="fixed"
         top={0}
         zIndex="sticky"
-        boxShadow="md"
+        boxShadow="inset.header"
         style={{
           translateY: slideDownSpring,
-          opacity: appearOpacitySpring,
+          // opacity: appearOpacitySpring,
           //   WebkitMask: "linear-gradient(0deg, transparent, black 30%)",
           //   backdropFilter: "blur(10px)",
         }}

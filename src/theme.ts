@@ -43,14 +43,18 @@ const theme = extendTheme({
         default: "inset 5px 5px 15px #d2d5d6, inset -5px -5px 15px #ffffff;",
         _dark: "inset 5px 5px 15px #161b25, inset -5px -5px 15px #1e2533;",
       },
+      "inset.header": {
+        default: "inset 5px 5px 15px #d2d5d6, inset -5px -5px 15px #ffffff;",
+        _dark: "inset 5px 5px 15px #262f3d, inset -5px -5px 15px #343f53;",
+      },
     },
     colors: {
       roundedIn: {
-        default: "linear-gradient(145deg, #dee1e3, #ffffff);",
+        default: "linear-gradient(165deg, #dee1e3, #ffffff);",
         _dark: "linear-gradient(145deg, #171d28, #1c222f);",
       },
       roundedOut: {
-        default: "linear-gradient(145deg, #ffffff, #dee1e3);",
+        default: "linear-gradient(165deg, #ffffff, #dee1e3);",
         _dark: "linear-gradient(145deg, #1c222f, #171d28);",
       },
     },
@@ -67,13 +71,14 @@ const theme = extendTheme({
           },
         }),
         hovering: (props: StyleFunctionProps) => ({
-          // bg: "roundedIn",
-          boxShadow: "hover.sm",
+          bg: "roundedOut",
+          // boxShadow: "hover.sm",
           backdropFilter: "blur(4px)",
           _hover: {
-            bg: "roundedIn",
+            boxShadow: "inset.sm",
+            bg: "roundedOut",
           },
-          transition: "all 0.5s ease-in-out",
+          transition: "all 0.2s ease-in-out",
         }),
       },
     },
