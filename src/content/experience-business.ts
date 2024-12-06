@@ -19,10 +19,10 @@ export const businessExperience: TExperienceItem[] = [
     start: "Jun. 2022",
     end: "Present",
     notes: [
+      "Led development of a mobile app successfully delivered to the US Military, facilitating the trial of our product which expanded interest and adaptation into a new market.",
       "Developed Generative AI vehicle-connected web applications for clients such as Walmart and USPS, extending our transactional product offering into a cloud-based Software as a Service (SaaS) subscription model.",
       "Architected and delivered an immersive 3D virtual showroom; a highly effective online marketing tool for customers to explore our electric vehicles, enhancing customer engagement and brand visibility.",
       // "Led development of an Augmented Reality experience and demonstrated at Google Next 2023. Virtual Reality goggles allowed users to explore a real Canoo vehicle, resulting in increased brand visibility and customer interaction.",
-      "Led technical development of a mobile app successfully delivered to the US Military, facilitating the trial of our product which expanded interest and adaptation into a new market.",
     ],
   },
   {
@@ -33,10 +33,10 @@ export const businessExperience: TExperienceItem[] = [
     end: "Jun. 2022",
     notes: [
       // "Learned React and backend language RPG, then developed company's first full-stack React application within one month.",
+      "Organized interdepartmental meetings to identify inefficiencies; identified a wholesale quoting inefficiency in the use of bloated spreadsheets, then built custom intelligent quoting software reducing this process from weeks to hours.",
       "Developed our business-critical secure mobile payment system during COVID-19, enabling rapid company recovery; rehired >1000 furloughed sales personnel within days, and generated additional revenue of $65 million from March through July 2020.",
       "Created a software framework to build suites of custom internal tools, revolutionizing how internal business is done.",
       // "Acted as a business analyst investigating inefficiencies, organized interdepartmental meetings to identify pain points, then built out internal software tools to streamline operations.",
-      "Organized interdepartmental meetings to identify inefficiencies; identified a wholesale quoting inefficiency in the use of bloated spreadsheets, then built custom intelligent quoting software reducing this process from weeks to hours.",
     ],
   },
   {
@@ -46,7 +46,7 @@ export const businessExperience: TExperienceItem[] = [
     start: "Apr. 2019",
     end: "Jun. 2022",
     notes: [
-      "Led a 13-person board, hosting industry speakers on IBM topics, networking and sharing throughout the community.",
+      "Managed a 13-person board, hosting industry speakers on IBM topics, networking and sharing throughout the community.",
       "Delivered technical and non-technical presentations to audiences of 30-50.",
     ],
   },
