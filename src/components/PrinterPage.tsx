@@ -48,6 +48,10 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
 
   const skills = isBusinessOriented ? content.businessSkills : content.skills;
 
+  const email = isBusinessOriented
+    ? content.email.acquisitions
+    : content.email.personal;
+
   const educationBullets = isBusinessOriented
     ? content.education.printerBusinessBullets
     : content.education.printerBullets;
@@ -92,7 +96,7 @@ export default function PrinterPage({ isBusinessOriented }: PrinterPageProps) {
             )}
           </Heading>
           <Text fontSize="md" opacity={0.6}>
-            {content.email}
+            {email}
             {"  "}|{"  "}
             {content.phone}
             {"  "}|{"   "}

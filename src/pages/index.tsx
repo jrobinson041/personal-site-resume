@@ -32,7 +32,7 @@ export default function Home() {
       <div className="no-print">
         <Header
           name={content.name}
-          email={content.email}
+          email={content.email.personal}
           imgSrc={content.avatarSrc}
         />
 

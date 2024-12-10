@@ -4,7 +4,10 @@ import businessExperience from "./experience-business";
 
 const content = {
   name: "John Robinson",
-  email: "jrobinson041@gmail.com",
+  email: {
+    personal: "jrobinson041@gmail.com",
+    acquisitions: "john@robinsonacquisitions.com",
+  },
   phone: "(631) 988 - 3397",
   personalSite: {
     text: "john-robinson.com",
