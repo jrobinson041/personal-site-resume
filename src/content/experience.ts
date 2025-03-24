@@ -69,11 +69,11 @@ export type TExperienceItem = {
 
 export const experience: TExperienceItem[] = [
   {
-    title: "Senior Front-End Software Engineer",
+    title: "Senior Front-End Software Engineer | Tech Lead",
     company: "Canoo",
     location: "Torrance, CA",
     start: "Jun. 2022",
-    end: "Present",
+    end: "Jan. 2025",
     notes: [
       "Utilizing React and NextJS to engineer vehicle-connected web applications for clients such as Walmart and USPS, managing complex continuous data streams via AWS and Google Cloud stacks.",
       "Architected and delivered an immersive 3D virtual showroom using WebGL, ThreeJS, and React; a world for customers to explore our offerings, enhancing customer engagement and product visibility.",
